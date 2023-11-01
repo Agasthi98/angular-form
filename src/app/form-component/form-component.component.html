@@ -83,12 +83,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr *ngFor="let record of submitRecords">
               <th class="align-middle" scope="row">1</th>
-              <td class="align-middle">Mark</td>
-              <td class="align-middle">Otto</td>
-              <td class="align-middle">@mdo</td>
-              <td class="align-middle">10000</td>
+              <td class="align-middle">{{ record.name }}</td>
+              <td class="align-middle">{{ record.email }}</td>
+              <td class="align-middle">{{ record.phone }}</td>
+              <td class="align-middle">
+                {{ record.amount | currency : "LKR" }}
+              </td>
               <td>
                 <button type="button" class="btn btn-danger">Delete</button>
               </td>
