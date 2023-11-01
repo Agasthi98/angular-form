@@ -1,10 +1,10 @@
-<h1>form-component works!</h1>
+<h1 class="text-title">Form-component</h1>
 <!-- Section: Split screen -->
 <section class="body">
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-4 vh-100">
-        <form>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
           <div class="form-group row">
             <label for="inputName" class="col-sm-2 col-form-label">Name:</label>
             <div class="col-sm-9">
@@ -12,6 +12,7 @@
                 type="text"
                 class="form-control"
                 id="inputName"
+                formControlName="name"
                 placeholder="Input Name"
               />
             </div>
@@ -23,6 +24,7 @@
             <div class="col-sm-9">
               <input
                 type="email"
+                formControlName="email"
                 class="form-control"
                 id="inputEmail"
                 placeholder="Input Email"
@@ -36,6 +38,7 @@
             <div class="col-sm-9">
               <input
                 type="text"
+                formControlName="phone"
                 class="form-control"
                 id="inputPhone"
                 placeholder="Input Phone No"
@@ -49,6 +52,7 @@
             <div class="col-sm-9">
               <input
                 type="number"
+                formControlName="amount"
                 class="form-control"
                 id="inputName"
                 placeholder="Input Amount"
@@ -56,7 +60,13 @@
             </div>
           </div>
           <div class="text-center">
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="!myForm.valid"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>
