@@ -7,7 +7,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./form-component.component.scss']
 })
 export class FormComponentComponent {
-
   submitRecords: any[]
 
 constructor() {
@@ -41,6 +40,14 @@ constructor() {
 
     this.submitRecords.push(records);
 
+  }
+
+  /**
+   * Delete record
+   */
+
+  onDelete(index: number){
+    this.submitRecords.splice(index,1)
   }
 
 }
