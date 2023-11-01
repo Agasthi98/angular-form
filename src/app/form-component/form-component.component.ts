@@ -15,6 +15,7 @@ export class FormComponentComponent {
   constructor() {
     this.submitRecords = [];
   }
+
   /***
    * Form group & validations
    */
