@@ -9,6 +9,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class FormComponentComponent {
   submitRecords: any[];
   storedData: any[] = [];
+  imagePath: any = '../../assets/icons8.png';
+  title: any = 'Angular Form';
 
   constructor() {
     this.submitRecords = [];
