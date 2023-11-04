@@ -12,11 +12,15 @@ export class TableComponent {
     this.records = [];
   }
 
+  ngOnInit(): void {
+    console.log(this.records);
+  }
+
   /**
    * Delete record
    */
-
-  onDelete(index: number) {
-    this.records.splice(index, 1);
+  onDelete(id: any) {
+    this.records = this.records.filter((item: any) => item.id !== id);
+    localStorage.setItem('records', JSON.stringify(this.records));
   }
 }

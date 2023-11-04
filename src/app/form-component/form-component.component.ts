@@ -52,10 +52,18 @@ export class FormComponentComponent {
       return;
     }
 
+    const newRecord = {
+      id: new Date().getTime().toString(),
+      records,
+    };
+
+    console.log(newRecord);
+    console.log(this.submitRecords);
+
     /**
      * Push records to array
      */
-    this.submitRecords.push(records);
+    this.submitRecords.push(newRecord);
 
     /**
      * sort array by amount

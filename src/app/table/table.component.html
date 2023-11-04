@@ -12,14 +12,18 @@
   <tbody>
     <tr *ngFor="let record of records; let i = index">
       <th class="align-middle" scope="row">{{ i + 1 }}</th>
-      <td class="align-middle">{{ record.name }}</td>
-      <td class="align-middle">{{ record.email }}</td>
-      <td class="align-middle">{{ record.phone }}</td>
+      <td class="align-middle">{{ record.records.name }}</td>
+      <td class="align-middle">{{ record.records.email }}</td>
+      <td class="align-middle">{{ record.records.phone }}</td>
       <td class="align-middle">
         {{ record.amount | currency : "USD" }}
       </td>
       <td>
-        <button (click)="onDelete(i)" type="button" class="btn btn-danger">
+        <button
+          (click)="onDelete(record.id)"
+          type="button"
+          class="btn btn-danger"
+        >
           Delete
         </button>
       </td>
