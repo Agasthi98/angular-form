@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -60,7 +60,18 @@ export class FormComponentComponent {
      */
 
     this.submitRecords.sort((a, b) => b.amount - a.amount);
+
+    //set to submitted rocord to local storage
+    this.setLocalStorage();
+
     // Reset the form after submission
     this.myForm.reset();
+  }
+
+  /**
+   * set record to local storage
+   */
+  setLocalStorage() {
+    localStorage.setItem('records', JSON.stringify(this.submitRecords));
   }
 }
