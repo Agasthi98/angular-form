@@ -8,7 +8,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FormComponentComponent {
   submitRecords: any[];
-  storedData: any[] = [];
   imagePath: any = '../../assets/icons8.png';
   title: any = 'Angular Form';
 
@@ -16,6 +15,9 @@ export class FormComponentComponent {
     this.submitRecords = [];
   }
 
+  ngOnInit(): void {
+    this.getLocalStorage(); //get data from local storage
+  }
   /***
    * Form group & validations
    */
@@ -73,5 +75,15 @@ export class FormComponentComponent {
    */
   setLocalStorage() {
     localStorage.setItem('records', JSON.stringify(this.submitRecords));
+  }
+
+  /**
+   * get records from local storage
+   */
+  getLocalStorage() {
+    const records = localStorage.getItem('records');
+    if (records) {
+      this.submitRecords = JSON.parse(records);
+    }
   }
 }
