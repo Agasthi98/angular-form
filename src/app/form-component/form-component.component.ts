@@ -63,12 +63,4 @@ export class FormComponentComponent {
     // Reset the form after submission
     this.myForm.reset();
   }
-
-  /**
-   * Delete record
-   */
-
-  onDelete(index: number) {
-    this.submitRecords.splice(index, 1);
-  }
 }
