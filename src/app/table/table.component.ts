@@ -12,9 +12,7 @@ export class TableComponent {
     this.records = [];
   }
 
-  ngOnInit(): void {
-    console.log(this.records);
-  }
+  ngOnInit(): void {}
 
   /**
    * Delete record
