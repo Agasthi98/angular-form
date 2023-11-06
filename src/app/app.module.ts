@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { FormComponentComponent } from './form-component/form-component.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TableComponent } from './table/table.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, FormComponentComponent, TableComponent],
+  declarations: [AppComponent, FormComponentComponent, TableComponent, LoginComponent],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
