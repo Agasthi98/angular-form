@@ -4,8 +4,9 @@ import { LoginComponent } from './login/login.component';
 import { FormComponentComponent } from './form-component/form-component.component';
 
 const routes: Routes = [
-  { path: '', component: FormComponentComponent },
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'form', component: FormComponentComponent },
 ];
 
 @NgModule({
